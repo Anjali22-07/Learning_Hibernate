@@ -15,6 +15,8 @@ public class Student {
 	
 	private String city;
 	
+	private Certificate certi;
+	
 	
 	public Student() {
 		super();
@@ -45,12 +47,20 @@ public class Student {
 		this.city = city;
 	}
 	
+	
+	
 	//overriding toString method-By overriding toString(), you can display the object’s data in a readable format: in a human-readable format.because by default it prints classname with some hashcode
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
 		return this.id+" : "+this.name+" : "+this.city;
 				
+	}
+	public Certificate getCerti() {
+		return certi;
+	}
+	public void setCerti(Certificate certi) {
+		this.certi = certi;
 	}
 	
 	

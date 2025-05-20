@@ -1,4 +1,8 @@
 package com.tut;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Date;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -10,7 +14,7 @@ import org.hibernate.cfg.Configuration;
  */
 public class App 
 {
-    public static void main( String[] args )
+    public static void main( String[] args ) throws IOException
     {
     	System.out.println( "project started" );
     	//creating the object of session factory
@@ -33,8 +37,21 @@ public class App
     	st.setCity("Lucknow");
     	System.out.println(st);
     	
+    	//Creating object of address class
+    	Address ad=new Address();
+    	ad.setStreet("ln 5");
+        ad.setCity("Lucknow");
+        ad.setAddedDate(new Date());
+        
+        //Reading image 
+        FileInputStream fis=new FileInputStream("src/main/java/pic1.png");
+         byte[] data=new byte[fis.available()];
+         fis.read(data);
+         ad.setImage(data);
+    	
     	//to save the st object--object of student class
     	
+         //we need session because get and load both methods are with session
     	Session session=factory.openSession();
    
     
@@ -42,12 +59,15 @@ public class App
     	session.beginTransaction();
     	//save st because The object isn't immediately inserted into the DB — it’s queued in Hibernate's internal memory (called the persistence context).
     	session.save(st);
+    	//saving the address object
+    	session.save(ad);
     	//after saving we need to commit transaction--because--Hibernate now flushes all queued operations (like save) to the database.
     	session.getTransaction().commit();
     	
     	
     	//to release the database connection and clean up resources after you're done using the session.
     	session.close();
+    	System.out.println("Done..");
     }
     
 }
