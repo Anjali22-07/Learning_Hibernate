@@ -27,13 +27,18 @@
 		
 		<property name="show_sql">true</property>
 		
-		<!--  we can also format sql - with the help of format_sql property -->
+		<!--  we can also format sql - with the help of format_sql property -presents the query in a formated way -->
+		<property name="format_sql">true</property>
 		
 		<!-- to update hibernate about the class to use it as an entity -->
 		
 		<mapping class="com.tut.Student"/>
 		<mapping class="com.tut.Address"/>
 		<mapping class="com.tut.FetchDemo"/>
+		<mapping class="com.tut.Questions"/>
+		<mapping class="com.tut.Answer"/>
+		<mapping class="com.map1.Employees"/>
+		<mapping class="com.map1.Project"/>
 		
 		</session-factory>
 		
