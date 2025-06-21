@@ -48,20 +48,19 @@ Hibernate is a powerful, high-performance Object-Relational Mapping (ORM) framew
    Example (Maven):
 
    ```xml
-   <dependencies>
-     <!-- Hibernate Core -->
-     <dependency>
-       <groupId>org.hibernate</groupId>
-       <artifactId>hibernate-core</artifactId>
-       <version>5.6.15.Final</version>
-     </dependency>
-     <!-- MySQL Connector -->
-     <dependency>
-       <groupId>mysql</groupId>
-       <artifactId>mysql-connector-java</artifactId>
-       <version>8.0.33</version>
-     </dependency>
-   </dependencies>
+  <!-- installed hibernate dependencies from google after searching for hibernate maven-->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>6.6.13.Final</version>
+		</dependency>
+		<!-- attached sql dependencies from google by searching mysql connector -->
+		<!--https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>8.0.29</version>
+		</dependency>
 
 ##  Configure Hibernate
 
