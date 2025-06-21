@@ -1,10 +1,14 @@
 package com.tut;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.Cacheable;
 import jakarta.persistence.*;
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 @Entity     //to change the name of entity we use Entity(name="")
 //@Table(name="") is used to change the name of the table
+@Cache(usage= CacheConcurrencyStrategy.READ_ONLY)
 public class Student {
 
 	//we will treat this class as an entity

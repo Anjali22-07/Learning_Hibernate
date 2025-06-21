@@ -3,6 +3,7 @@ package com.tut;
 
 import java.util.List;
 
+import jakarta.persistence.CascadeType;
 //Learning one-to-one mapping
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -23,7 +24,7 @@ public class Questions {
 	
 	// for OneToMany mapping-- we'll use list because one question can store multiple answer
 	
-	@OneToMany(mappedBy="question", fetch=FetchType.EAGER)  //this won't create a new table and will only give us a join column
+	@OneToMany(mappedBy="question", fetch=FetchType.EAGER, cascade = CascadeType.ALL)  //this won't create a new table and will only give us a join column
 	private List<Answer> answer;
 
 	public int getQuestion_id() {

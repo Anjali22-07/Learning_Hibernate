@@ -21,7 +21,7 @@
 		<!-- to create table automatically-we use a property hbm2ddl.auto -->
 		<!-- there are multiple functions-if we use create it will create the table each time. so we use update which means that it will create the table if it does not exist and will update it if the table exists -->
 		
-		<property name="hbm2ddl.auto">create</property>
+		<property name="hbm2ddl.auto">update</property>
 		
 		<!-- to view the queries fired -->
 		
@@ -32,6 +32,15 @@
 		
 		<!-- to update hibernate about the class to use it as an entity -->
 		
+		
+		<!-- to enable second level cache -->
+		
+		<property name="cache.use_second_level_cache">True</property>
+		<!-- class for second level class  -->
+		
+		<property name="cache.region.factory_class">org.hibernate.cache.jcache.JCacheRegionFactory</property>
+		 <property name="hibernate.javax.cache.uri">ehcache.xml</property>
+		
 		<mapping class="com.tut.Student"/>
 		<mapping class="com.tut.Address"/>
 		<mapping class="com.tut.FetchDemo"/>
@@ -39,6 +48,7 @@
 		<mapping class="com.tut.Answer"/>
 		<mapping class="com.map1.Employees"/>
 		<mapping class="com.map1.Project"/>
+		
 		
 		</session-factory>
 		
